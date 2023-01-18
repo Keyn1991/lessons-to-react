@@ -3,6 +3,7 @@ import {useEffect, useState} from "react";
 import {getUsers, getUser} from "../ServiceComponents/ServiceComponents";
 import UserComponents from "./UserComponents";
 import UserInfo from "../UserInfo/UserInfo";
+import '../css/style.css'
 function UsersComponents() {
 
     let [users, setUsers] = useState([])
@@ -20,7 +21,7 @@ function UsersComponents() {
 
     return (
 
-        <div>
+        <div className={'header'}>
 
                 {users.map(value =>
                 <UserComponents
@@ -34,7 +35,7 @@ function UsersComponents() {
             }
             <hr/>
 
-            <div>
+            <div className={'userInfo'}>
                 {userDet &&<UserInfo item={userDet}/>}
             </div>
         </div>
