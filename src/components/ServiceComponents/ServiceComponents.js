@@ -3,11 +3,22 @@ import axios from "axios";
 let axiosServiceUsers = axios.create({
     baseURL: 'https://jsonplaceholder.typicode.com',
     headers: {}
-})
+});
 
-const getDetailsUsers = () => {
+const getUsers = () => {
     return axiosServiceUsers.get('/users');
 
 }
+const getUser = (id) => {
 
-export {getDetailsUsers, axiosServiceUsers }
+return axiosServiceUsers.get('/users/' +id)
+}
+
+
+
+
+
+export  {getUser, getUsers}
+
+
+
