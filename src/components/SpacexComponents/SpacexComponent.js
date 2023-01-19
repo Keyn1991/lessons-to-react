@@ -10,7 +10,9 @@ export default function Launchs (){
 
     useEffect(()=>{
         getdata().then(value => {
-            setDataLaunch(value.data)
+            setDataLaunch(value)
+
+
         })
 
     },[ ])
@@ -19,7 +21,7 @@ export default function Launchs (){
         <div>
 
 
-            {launch.filter(({launch_year})=>launch_year!=='2020').map((launch,index)=>
+            {launch.filter(({date_utc})=>date_utc !== '2020').map((launch,index)=>
                 (
                     <Launch launch={launch}
                             key={index}/>

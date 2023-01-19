@@ -1,14 +1,7 @@
 
-import axios from "axios";
-
-let axiosInstance = axios.create(
-    {
-        baseURL:'https://api.spacexdata.com/v3/launches/'
-
-    }
-)
 const getdata = ()=>{
-    return axiosInstance.get()
+    return fetch('https://api.spacexdata.com/v4/launches/').then(value => value.json())
+
 }
 export default getdata;
 
