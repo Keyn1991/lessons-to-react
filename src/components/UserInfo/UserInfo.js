@@ -30,7 +30,7 @@ export default function UserInfo ({item}){
             <p><strong>catchPhrase:</strong> {item.company.catchPhrase}</p>
             <p><strong>bs:</strong> {item.company.bs}</p>
 
-
+<button>Get Post</button>
 
 
 

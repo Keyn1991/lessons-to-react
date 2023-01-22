@@ -14,11 +14,14 @@ const getUser = (id) => {
 return axiosServiceUsers.get('/users/' +id)
 }
 
+const getPost = (post) => {
+  return axiosServiceUsers.get('/posts', {params:{getUser}})
+}
 
 
 
 
-export  {getUser, getUsers}
+export  {getUser, getUsers, getPost}
 
 
 
