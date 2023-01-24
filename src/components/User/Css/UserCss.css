@@ -1,0 +1,46 @@
+
+.user-block-two {
+    border: 1px solid;
+    margin: 5px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    background: bisque;
+
+}
+
+.post {
+    margin: 10px;
+}
+
+.comments-block {
+    text-align: center;
+    border: 1px solid;
+    padding: 20px;
+    background: bisque;
+}
+
+.registration-user{
+    margin: 10px;
+}
+
+.users-block{
+    border: 1px solid;
+    margin: 10px;
+    padding: 15px;
+    align-items: center;
+    font-size: 12px;
+    text-align: center;
+    background: bisque;
+}
+
+.user-block{
+    border: 3px solid;
+    margin: 5px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background: azure;
+}
