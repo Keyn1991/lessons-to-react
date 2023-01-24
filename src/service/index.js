@@ -1,3 +1,2 @@
-export * from './UserService';
-export * from  './ComentService'
+export * from './CarService';
 export * from './axiosService';
