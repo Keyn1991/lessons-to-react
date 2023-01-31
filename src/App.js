@@ -8,7 +8,11 @@ import TodosPage from "./pages/Todos/TodosPage";
 import PostsPage from "./pages/Posts/PostsPage";
 import PostPage from "./pages/Post/PostPage";
 import {UsersPage} from "./pages/UsersPage/UsersPage";
+import LoginPage from "./pages/LoginPage/LoginPage";
+import {RequireAuth} from "./hooks/RequireAuth";
 function App() {
+
+
   return (
 
     <div className="App">
@@ -37,7 +41,10 @@ function App() {
 
     <Route path={'todos'} element={<TodosPage/>}/>
     <Route path={'albums'} element={<AlbumsPage/>}/>
-    <Route path={'users'} element={<UsersPage/>}/>
+    <Route path={'users'} element={<RequireAuth><UsersPage/></RequireAuth>}/>
+
+    <Route path={'login'} element={<LoginPage/>}/>
+
 
 
     <Route path={'comments'} element={<ComentsPage/>}>
