@@ -26,6 +26,11 @@ background: #99c0ba;
   height: 50px;
   background: #99c0ba;
 }
+.users-btn {
+  width: 23%;
+  height: 50px;
+  background: #99c0ba;
+}
 
 .albums-page {
   border: 1px solid;
@@ -74,4 +79,9 @@ background: #99c0ba;
   height: max-content;
 
 }
-
+.users-block {
+  border: 1px solid;
+  text-align: center;
+  font-size: 40px;
+  left: 400px;
+}
