@@ -1,0 +1,31 @@
+body {
+    background-color: bisque;}
+
+.main {
+
+    display: flex;
+    background-color: bisque;
+    border-bottom: 1px solid black;
+}
+.cat-card {
+    padding: 50px;
+    border-left: 1px solid black;
+
+
+}
+.dog-card {
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    height: 500px;
+    padding: 50px;
+}
+
+button {
+    margin: 5px;
+}
+.dog {
+    margin-left: 44px;
+}
+.cat {
+    margin-left: 24px;
+}
