@@ -1,14 +1,15 @@
 
 import './App.css';
+import {UsersComponent} from "./components/UsersComponents/UserComponent";
 
-import {UserComponent} from "./components/UserComponents/UserComponent";
+
 
 function App() {
 
 
   return (
     <div className="App">
-        <UserComponent/>
+        <UsersComponent/>
     </div>
   );
 }
