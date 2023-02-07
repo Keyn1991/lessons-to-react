@@ -1,15 +1,15 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 
-import {User} from "../User/User";
-import {userActions} from "../../redux";
+import {Car} from "../Car/Car";
+import {carActions} from "../../redux";
 
-const Users = () => {
+const Cars = () => {
        const dispatch = useDispatch()
-       const {users, errors, loading} =  useSelector(state => state.users)
+       const {cars, errors, loading} =  useSelector(state => state.cars)
 
         useEffect( ()=> {
-            dispatch(userActions.getAll())
+            dispatch(carActions.getAll())
 
 
             },[])
@@ -20,9 +20,9 @@ const Users = () => {
             {errors && JSON.stringify(errors)}
             {loading && <h1>LOADING.......</h1>}
 
-            {users.map(user=><User key={user.id} user={user}/>)}
+            {cars.map(car=><Car key={car.id} car={car}/>)}
         </div>
     );
 };
 
-export {Users};
+export {Cars};

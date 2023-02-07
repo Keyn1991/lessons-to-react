@@ -1,10 +1,10 @@
 import React from 'react';
 import {useSelector} from "react-redux";
 const Header = () => {
-    const {selectedUser} = useSelector(state => state.users )
+    const {selectedCar} = useSelector(state => state.cars )
     return (
         <div className={"header"}>
-            {selectedUser && selectedUser.name}
+            {selectedCar && selectedCar.brand}
         </div>
     );
 };

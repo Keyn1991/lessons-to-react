@@ -1,7 +1,7 @@
 import React from "react";
 import './App.css';
 
-import {Posts, Users} from "./components";
+import {Posts, Cars} from "./components";
 import {Header} from "./components/Header/Header";
 const App = () => (
 
@@ -9,9 +9,9 @@ const App = () => (
 
         <Header/>
 
-        <Users/>
+        <Cars/>
 
-        <Posts/>
+
 
     </div>
 

@@ -1,4 +1,3 @@
-export * from './Users/Users';
-export * from './User/User'
-export * from './Post/Post';
-export * from './Posts/Posts';
+export * from './Cars/Cars';
+export * from './Car/Car'
+export * from './Header/Header'

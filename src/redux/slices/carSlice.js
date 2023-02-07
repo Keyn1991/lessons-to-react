@@ -1,9 +1,9 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 
-import {usersService} from "../../services";
+import {carsService} from "../../services";
 
 const initialState = {
-    users:[],
+    cars:[],
     errors: null,
     loading: null,
     selectedUser: null,
@@ -11,10 +11,10 @@ const initialState = {
 };
 
 const getAll = createAsyncThunk(
-    'userSlice/getAll',
+    'carSlice/getAll',
     async (_, {rejectWithValue})=> {
         try {
-            const {data} = await  usersService.getAll();
+            const {data} = await  carsService.getAll();
             return data
         }catch (e){
             return rejectWithValue(e.response.data)
@@ -24,10 +24,10 @@ const getAll = createAsyncThunk(
 );
 
 const getById =  createAsyncThunk(
-    'userSlice/get',
+    'carSlice/get',
     async ({id}, {rejectWithValue})=> {
     try {
-        const {data} = await usersService.getById(id);
+        const {data} = await carsService.getById(id);
         return data
     }catch (e) {
         return rejectWithValue(e.response.data)
@@ -36,41 +36,41 @@ const getById =  createAsyncThunk(
     }
 )
 
-const userSlice = createSlice({
-    name:'userSlice',
+const carSlice = createSlice({
+    name:'carSlice',
     initialState,
     reducers: {
-    setSelectedUser:(state, action) =>{
-            state.selectedUser = action.payload
+    setSelectedCar:(state, action) =>{
+            state.selectedCar = action.payload
     }
     },
 extraReducers:builder =>
     builder
         .addCase(getAll.fulfilled ,(state, action) =>{
             state.loading = false
-                state.users = action.payload
+                state.cars = action.payload
         })
         .addCase(getAll.rejected, (state, action) => {
             state.loading = false
-                state.users = action.payload
+                state.cars = action.payload
         })
         .addCase(getAll.pending, (state, action) => {
             state.loading = true
         })
         .addCase(getById.fulfilled, (state, action) => {
-            state.selectedUser = action.payload
+            state.selectedCar = action.payload
         })
 });
-const {reducer: userReducer, actions: {setSelectedUser}} = userSlice;
+const {reducer: carReducer, actions: {setSelectedCar}} = carSlice;
 
-const userActions = {
-    setSelectedUser,
+const carActions = {
+    setSelectedCar,
     getAll,
     getById
 
 }
 export {
-    userReducer,
-    userActions,
-    userSlice
+    carReducer,
+    carActions,
+    carSlice
 };
