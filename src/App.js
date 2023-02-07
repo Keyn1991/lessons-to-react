@@ -7,11 +7,9 @@ const App = () => (
 
     <div className="App">
 
-      <Header/>
+        <Header/>
 
-
-
-     <Users/>
+        <Users/>
 
         <Posts/>
 
