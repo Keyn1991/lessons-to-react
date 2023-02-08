@@ -4,6 +4,9 @@ import {carsService} from "../../services";
 
 const initialState = {
     cars:[],
+    prev:null,
+    next: null,
+    carForUpdate: null,
     errors: null,
     loading: null,
     selectedCar: null,
@@ -12,9 +15,9 @@ const initialState = {
 
 const getAll = createAsyncThunk(
     'carSlice/getAll',
-    async (_, {rejectWithValue})=> {
+    async ({page}, {rejectWithValue})=> {
         try {
-            const {data} = await  carsService.getAll();
+            const {data} = await  carsService.getAll(page);
             return data
         }catch (e){
             return rejectWithValue(e.response.data)
@@ -66,8 +69,11 @@ const carSlice = createSlice({
 extraReducers:builder =>
     builder
         .addCase(getAll.fulfilled ,(state, action) =>{
-            state.loading = false
-                state.cars = action.payload
+                const {prev, next, items} = action.payload
+                state.cars = items
+                state.prev = prev
+                state.next = next
+                state.loading = false
         })
         .addCase(getAll.rejected, (state, action) => {
             state.loading = false

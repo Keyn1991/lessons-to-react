@@ -20,13 +20,6 @@ const save = async (car) => {
 
 
 
-    //
-    // const submit = async (car) => {
-    //     const {data} = await carsService.create(car);
-    //     setCars(prev => [...prev, data])
-    //     reset()
-    //
-    // }
 
     return (
 

@@ -1,10 +1,16 @@
 import React from 'react';
-import {useSelector} from "react-redux";
+
+import css from './Header.module.css'
+import {Link} from "react-router-dom";
+
 const Header = () => {
-    const {selectedCar} = useSelector(state => state.cars )
+
     return (
-        <div className={"header"}>
-            {selectedCar && selectedCar.brand}
+        <div className={css.Header}>
+            <div>
+                <Link to={'/login'}>Login</Link>
+                <Link to={'/register'}>Register</Link>
+            </div>
         </div>
     );
 };
