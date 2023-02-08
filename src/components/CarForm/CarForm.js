@@ -4,30 +4,35 @@ import {joiResolver} from "@hookform/resolvers/joi";
 
 
 
-import {carsService} from "../../services";
-import {carValidator} from "../../validators/validator";
 
-const CarForm = ({setCars}) => {
+import {carValidator} from "../../validators/validator";
+import {useDispatch} from "react-redux";
+import {carActions} from "../../redux";
+
+const CarForm = (car) => {
 
     const {register, handleSubmit, reset, formState:{errors, isValid}, setValue} = useForm({mode: "all", resolver:joiResolver(carValidator)});
+    const dispatch = useDispatch();
+const save = async (car) => {
+    await dispatch(carActions.create({car}))
+    reset()
+}
 
 
 
-
-
-
-    const submit = async (car) => {
-        const {data} = await carsService.create(car);
-        setCars(prev => [...prev, data])
-        reset()
-
-    }
+    //
+    // const submit = async (car) => {
+    //     const {data} = await carsService.create(car);
+    //     setCars(prev => [...prev, data])
+    //     reset()
+    //
+    // }
 
     return (
 
 
         <div className={'users-block'}>
-            <form onSubmit={handleSubmit(submit)}>
+            <form onSubmit={handleSubmit(save)}>
 
                 <input type="text" placeholder={'id'} {...register('id')}/>
                 {errors.id && <span>{errors.id.message}</span>}

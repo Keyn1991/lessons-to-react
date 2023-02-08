@@ -6,7 +6,7 @@ const initialState = {
     cars:[],
     errors: null,
     loading: null,
-    selectedUser: null,
+    selectedCar: null,
 
 };
 
@@ -35,6 +35,25 @@ const getById =  createAsyncThunk(
 
     }
 )
+
+
+
+const create =  createAsyncThunk(
+    'carSlice/create',
+    async ({car}, thunkAPI)=> {
+        try {
+            await carsService.create(car);
+            thunkAPI.dispatch(getAll())
+        }catch (e) {
+            return thunkAPI.rejectWithValue(e.response.data)
+        }
+
+    }
+)
+
+
+
+
 
 const carSlice = createSlice({
     name:'carSlice',
@@ -66,7 +85,8 @@ const {reducer: carReducer, actions: {setSelectedCar}} = carSlice;
 const carActions = {
     setSelectedCar,
     getAll,
-    getById
+    getById,
+    create
 
 }
 export {
