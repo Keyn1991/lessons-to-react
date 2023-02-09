@@ -46,7 +46,7 @@ const create =  createAsyncThunk(
     async ({car}, thunkAPI)=> {
         try {
             await carsService.create(car);
-            thunkAPI.dispatch(getAll())
+            thunkAPI.dispatch(getAll({page: 1}))
         }catch (e) {
             return thunkAPI.rejectWithValue(e.response.data)
         }
